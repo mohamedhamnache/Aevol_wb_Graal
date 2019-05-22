@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { saveAs } from "file-saver";
 import {JobTabService} from '../../../Services/job/job-tab.service'
+import {FileUploadService} from '../../../Services/file-upload/file-upload.service'
 @Component({
   selector: 'ngx-results',
   templateUrl: './results.component.html',
@@ -7,7 +9,7 @@ import {JobTabService} from '../../../Services/job/job-tab.service'
 })
 export class ResultsComponent implements OnInit {
 
-  constructor(private jobService :JobTabService) { }
+  constructor(private jobService :JobTabService,private downloadRes : FileUploadService) { }
   Datatable = []; 
   ngOnInit() {
     this.actu()
@@ -29,6 +31,17 @@ export class ResultsComponent implements OnInit {
           this.Datatable.push(job)
         }     
     });
-  } 
+  }
+  Ondownload(simName,idJob)
+  {
+    const body ={Nom_simu:simName,id_job:idJob}
+    this.downloadRes.downloadResult(body).subscribe(res =>{
+      console.log("Downloading ....")
+      console.log(res)
+      let fileName = simName +'-'+idJob
+      saveAs(res,fileName)
+      return res
+    })
+  }
 
 }

@@ -8,7 +8,7 @@
                         <td style="text-align: center"><br> {{row.Nom_simu}}  </td>
                         <td><br> <span style="color:green;">{{row.Statut}}</span></td> 
                         <td> 
-                            <button class="btn btn-success btn-hero btn-sm">
+                            <button class="btn btn-success btn-hero btn-sm" (click)="Ondownload(row.Nom_simu,row.ID_JOB)">
                               <i class="fas fa-file-download" style="font-size:20px; margin-right:10px"></i>
                                Dowload Directory
                             </button> 
