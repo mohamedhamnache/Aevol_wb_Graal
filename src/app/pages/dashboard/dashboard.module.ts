@@ -13,9 +13,9 @@ import { ResumeSimFormComponent } from './resume-sim-form/resume-sim-form.compon
     NgxEchartsModule,
   ],
   declarations: [
-    DashboardComponent,
-    NewSimFormComponent,
+    DashboardComponent, 
+    NewSimFormComponent, 
     ResumeSimFormComponent,
-  ],
+  ], 
 })
 export class DashboardModule { }

@@ -33,7 +33,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Statistics',
     icon: 'nb-bar-chart',
-    link: '/pages/miscellaneous/404',
+    link: '/pages/statistics',
      
   },
 ];

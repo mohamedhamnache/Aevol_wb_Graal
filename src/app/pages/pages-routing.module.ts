@@ -5,17 +5,24 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
-  children: [{
+  children: [
+    {
     path: 'dashboard',
     component: ECommerceComponent,
   }, {
     path: 'simulations',
     component: DashboardComponent,
   },{
+    path: 'statistics',
+    component: StatisticsComponent,
+  }, 
+
+  {
     path: 'modal-overlays',
     loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',
   },{
@@ -30,7 +37,8 @@ const routes: Routes = [{
   }, {
     path: 'miscellaneous',
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
-  }, {
+  }, 
+  {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',

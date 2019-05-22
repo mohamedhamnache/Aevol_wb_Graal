@@ -3,12 +3,12 @@
  <nb-card>
     
     <nb-card-body>
-        <div style="overflow-y: auto; height:90vh;">
-                <Table id="tableJobs"  class="table table-noborder" style="color :black;">
-                    <tr><th>Simulation name</th><th>Statut</th><th>Start</th><th>end</th><th>%</th><th>Cancel</th><th>Delete</th></tr>
+        <div style="overflow-y: auto; height:90vh; color:black;">
+                <Table id="tableJobs"  class="table table-noborder" >
+                    <tr><th>Simulation name</th><th>Status</th><th>Start</th><th>End</th><th>%</th><th>Cancel</th><th>Delete</th></tr>
                     <tr *ngFor="let row of Datatable">
                         <td style="text-align: center"><br> {{row.Nom_simu}}  </td>
-                        <td><br> {{row.Statut}}</td> 
+                        <td ><br> <span [ngStyle]="{'color' : getColor(row.Statut)}">{{row.Statut}}</span></td> 
                         <td><br>{{row.Start_time}} </td>
                         <td><br>{{row.End_time}}</td>
                         <td><br> {{row.Percentage}} </td>

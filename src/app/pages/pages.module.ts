@@ -6,6 +6,8 @@ import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
+import { StatisticsModule } from './statistics/statistics.module';
+
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -15,12 +17,15 @@ const PAGES_COMPONENTS = [
   imports: [
     PagesRoutingModule,
     ThemeModule,
-    DashboardModule,
+    DashboardModule, 
     ECommerceModule,
     MiscellaneousModule,
+    StatisticsModule
+    
   ],
   declarations: [
     ...PAGES_COMPONENTS,
+   
   ],
 })
 export class PagesModule {

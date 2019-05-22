@@ -28,5 +28,9 @@ export class JobTabService {
   {
     return this.httpClient.post(`${this.apiURL}/update-status`,body);
   }
+  public getFinishedUserJobs(body)
+  {
+    return this.httpClient.post(`${this.apiURL}/user-finished-jobs`,body);
+  }
 }
 

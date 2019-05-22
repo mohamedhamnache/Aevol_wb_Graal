@@ -1,0 +1,20 @@
+<nb-card>
+      <nb-card-header>User Results</nb-card-header>
+      <nb-card-body>
+       <div style="overflow-y: auto; height:53vh;">
+                <Table id="resultTab"  class="table table-noborder" style="color :black;">
+                    <th>Simulation name</th><th>Statut</th><th>Dowload Directory</th>
+                    <tr *ngFor="let row of Datatable">
+                        <td style="text-align: center"><br> {{row.Nom_simu}}  </td>
+                        <td><br> <span style="color:green;">{{row.Statut}}</span></td> 
+                        <td> 
+                            <button class="btn btn-success btn-hero btn-sm">
+                              <i class="fas fa-file-download" style="font-size:20px; margin-right:10px"></i>
+                               Dowload Directory
+                            </button> 
+                        </td>
+                    </tr>
+                </Table>  
+            </div>
+      </nb-card-body>
+</nb-card>

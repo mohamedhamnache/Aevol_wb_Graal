@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 import {FileUploadService} from '../../../Services/file-upload/file-upload.service'
 import {SimulationService} from'../../../Services/simulation/simulation.service'
 import { NgForm } from '@angular/forms'; 
@@ -24,7 +24,7 @@ export class NewSimFormComponent implements OnInit {
     Id_user;
     id_job;
     paramFile: any;
-  constructor(private fileUpload :FileUploadService,private formBuilder: FormBuilder, private simulationService : SimulationService) {
+  constructor(private fileUpload :FileUploadService,private formBuilder: FormBuilder, private simulationService : SimulationService,private router : Router) {
 
   }
   ngOnInit() {
@@ -70,7 +70,7 @@ export class NewSimFormComponent implements OnInit {
          {
 
            console.log("Make a new reservation, Cause : Bound")
-           const reservation ={NbNodes:1,walltime:"3:00:00",jobName:"Aevol-Sim-MH"}
+           const reservation ={NbNodes:1,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
            this.simulationService.makeG5kReservation(reservation).subscribe(data => {
 
               const body ={ID_USER : this.Id_user,Nom_simu:this.arr['simName'],id_deployment:this.id_deployment}
@@ -104,7 +104,7 @@ export class NewSimFormComponent implements OnInit {
        }
        else{
           console.log("Make a new reservation, Cause : Error")
-          const reservation ={NbNodes:1,walltime:"3:00:00",jobName:"Aevol-Sim-MH"}
+          const reservation ={NbNodes:1,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
           this.simulationService.makeG5kReservation(reservation).subscribe(data => {
             const body ={ID_USER : this.Id_user,Nom_simu:this.arr['simName'],id_deployment:this.id_deployment}
             this.simulationService.creatNewJob(body).subscribe(data => {
@@ -120,7 +120,8 @@ export class NewSimFormComponent implements OnInit {
            })
             
           })
-       }  
+       }
+       setTimeout(res=>{ this.router.navigate(['/pages/tables/jobTable'])},2000)  
     })
   }
 
