@@ -6,7 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-
+import { CompanionComponent } from './companion/companion.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -21,7 +21,10 @@ const routes: Routes = [{
     path: 'statistics',
     component: StatisticsComponent,
   }, 
-
+  {
+    path: 'companionSim',
+    component: CompanionComponent,
+  }, 
   {
     path: 'modal-overlays',
     loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',

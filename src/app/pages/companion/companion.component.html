@@ -1,0 +1,81 @@
+
+ 
+    <nb-card>
+      <nb-card-header>Simulation Companion</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="rumSimForm" (ngSubmit)="OnRunSimComp(form)"  #form="ngForm" >
+          <div class="form-group row">
+            <label for="inputSimName" class="col-sm-3 col-form-label">Simulation Name</label>
+            <div class="col-sm-9">
+              <input type="text" formControlName="simName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.simName.errors }"/>
+              <div *ngIf="submitted && f.simName.errors" class="invalid-feedback">
+                <div *ngIf="f.simName.errors.required">Simulation Name is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNbGen" class="col-sm-3 col-form-label">Number of generations</label>
+            <div class="col-sm-9">
+              <input type="number" formControlName="NBGen" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.NBGen.errors }" >
+              <div *ngIf="submitted && f.NBGen.errors" class="invalid-feedback">
+                <div *ngIf="f.NBGen.errors.required">Number of Generations is required</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputNbThread" class="col-sm-3 col-form-label">Number of Threads</label>
+            <div class="col-sm-9">
+              <input type="number" formControlName="NBth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.NBth.errors }">
+              <div *ngIf="submitted && f.NBth.errors" class="invalid-feedback">
+                <div *ngIf="f.NBth.errors.required">Number of Threads is required</div>
+              </div>
+            </div>
+          </div>
+          
+              
+          <div class="form-group row">
+           <label for="inputParamFile" class="col-sm-3 col-form-label">Param File</label>
+            <div class="col-sm-9">
+              <input  type="file" accept=".in"  (change)="OnUpload($event.target.files)"  formControlName="paramFile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.paramFile.errors }">
+              <div *ngIf="submitted && f.paramFile.errors" class="invalid-feedback">
+                <div *ngIf="f.paramFile.errors.required">Param File is required</div>
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+           <label for="inputParams" class="col-sm-3 col-form-label">Params</label>
+            <div class="col-sm-9">
+              <input  type="file" accept=".json"  (change)="fileChanged($event)" formControlName="params" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.params.errors }">
+              <div *ngIf="submitted && f.paramFile.errors" class="invalid-feedback">
+                <div *ngIf="f.params.errors.required">Params  are required</div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="form-group row">
+
+            <div class="offset-sm-3 col-sm-9">
+              <button name="bntRun" type="submit" class="btn btn-success" ng-model="bntRun" ng-required="nbTh" >Run Simulation</button>
+            </div>
+          </div>
+          
+
+        </form>
+      </nb-card-body>
+    </nb-card>
+  
+
+
+
+
+
+
+
+  
+  
+

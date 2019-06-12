@@ -37,7 +37,7 @@
           <div class="form-group row">
            <label for="inputParamFile" class="col-sm-3 col-form-label">Param File</label>
             <div class="col-sm-9">
-              <input  type="file" (change)="OnUpload($event.target.files)"  formControlName="paramFile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.paramFile.errors }">
+              <input  type="file" accept=".in" (change)="OnUpload($event.target.files)"  formControlName="paramFile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.paramFile.errors }">
               <div *ngIf="submitted && f.paramFile.errors" class="invalid-feedback">
                 <div *ngIf="f.paramFile.errors.required">Param File is required</div>
               </div>

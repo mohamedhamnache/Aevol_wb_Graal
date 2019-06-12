@@ -14,7 +14,7 @@
                         <td><br> {{row.Percentage}} </td>
                         <td> 
                             <button class="btn btn-warning btn-hero btn-sm"
-                            [disabled]="row.Statut=='finished' || row.Statut == 'canceled'"
+                            [disabled]="row.Statut=='finished' || row.Statut == 'canceled' || row.Statut == 'aborted'"
                             (click)="onCancelSim($event,row.ID_JOB)" >
                             Cancel
                             </button> 

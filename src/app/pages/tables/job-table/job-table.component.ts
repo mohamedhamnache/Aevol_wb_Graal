@@ -76,7 +76,7 @@ export class JobTableComponent implements OnInit {
         }
         
     });
-  },3000)
+  },12000)
   } 
 
   onDeleteConfirm(event,idjob) : void {

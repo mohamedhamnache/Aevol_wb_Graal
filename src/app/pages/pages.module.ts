@@ -7,6 +7,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { StatisticsModule } from './statistics/statistics.module';
+import { CompanionComponent } from './companion/companion.component';
 
 
 const PAGES_COMPONENTS = [
@@ -25,6 +26,7 @@ const PAGES_COMPONENTS = [
   ],
   declarations: [
     ...PAGES_COMPONENTS,
+    CompanionComponent,
    
   ],
 })

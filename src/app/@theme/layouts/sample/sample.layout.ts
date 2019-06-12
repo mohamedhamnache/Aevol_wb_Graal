@@ -27,7 +27,7 @@ import { StateService } from '../../../@core/data/state.service';
                    [end]="sidebar.id === 'end'">
         <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
           <a href="#" class="btn btn-hero-success main-btn">
-          <img style="width:32px;height:32px;" class="ion" src="../../../favicon.ico"/> <span>Aevol</span>
+          <img style="width:32px;height:32px;" class="ion" src="favicon.ico"/> <span>Aevol</span>
           </a>
         </nb-sidebar-header>
         <ng-content select="nb-menu"></ng-content>
