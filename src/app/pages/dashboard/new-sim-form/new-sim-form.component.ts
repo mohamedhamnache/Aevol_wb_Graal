@@ -70,9 +70,9 @@ export class NewSimFormComponent implements OnInit {
          {
 
            console.log("Make a new reservation, Cause : Bound")
-           const reservation ={NbNodes:3,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
+           const reservation ={NbNodes:4,walltime:"5:00:00",jobName:"Aevol-Sim-MH"}
            this.simulationService.makeG5kReservation(reservation).subscribe(data => {
-
+ 
               const body ={ID_USER : this.Id_user,Nom_simu:this.arr['simName'],id_deployment:this.id_deployment}
               this.simulationService.creatNewJob(body).subscribe(data => {
               console.log(data)
@@ -83,7 +83,7 @@ export class NewSimFormComponent implements OnInit {
               
               setTimeout(run=>{this.simulationService.runSingleSim(params).subscribe(data => {
                 console.log("run !!")
-              })},3000*3);
+              })},5000*4);
 
 
 
@@ -108,7 +108,7 @@ export class NewSimFormComponent implements OnInit {
        }
        else{
           console.log("Make a new reservation, Cause : Error")
-          const reservation ={NbNodes:3,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
+          const reservation ={NbNodes:4,walltime:"5:00:00",jobName:"Aevol-Sim-MH"}
           this.simulationService.makeG5kReservation(reservation).subscribe(data => {
             const body ={ID_USER : this.Id_user,Nom_simu:this.arr['simName'],id_deployment:this.id_deployment}
             this.simulationService.creatNewJob(body).subscribe(data => {
@@ -119,7 +119,7 @@ export class NewSimFormComponent implements OnInit {
              const params ={ID_USER : this.Id_user,ID_JOB:this.id_job,Nom_simu:this.arr['simName'],nb_gen:this.arr['NBGen'],nb_th:this.arr['NBth'],id_deployment:this.id_deployment }
              setTimeout(run=>{this.simulationService.runSingleSim(params).subscribe(data => {
               console.log("run !!")
-            })},3000*3);
+            })},5000*4);
 
            })
             

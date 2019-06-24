@@ -6,7 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { CompanionComponent } from './companion/companion.component';
+import { CampaignComponent } from './campaign/campaign.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -22,8 +22,8 @@ const routes: Routes = [{
     component: StatisticsComponent,
   }, 
   {
-    path: 'companionSim',
-    component: CompanionComponent,
+    path: 'campaignSim',
+    component: CampaignComponent,
   }, 
   {
     path: 'modal-overlays',

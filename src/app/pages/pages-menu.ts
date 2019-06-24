@@ -17,8 +17,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/simulations',
       },
       {
-        title: 'simulation companion',
-        link: '/pages/companionSim',
+        title: 'simulation Campaign',
+        link: '/pages/campaignSim',
       },
     ],
     

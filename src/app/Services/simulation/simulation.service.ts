@@ -29,6 +29,11 @@ export class SimulationService {
   {
     return this.httpClient.post(`${this.apiURL}/run-single-sim`,body);
   }
+  public runWFSim(body)
+  {
+    return this.httpClient.post(`${this.apiURL}/run-wf-sim`,body);
+  }
+
 
 }
 
