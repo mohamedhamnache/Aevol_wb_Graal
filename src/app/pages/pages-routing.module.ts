@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
-import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { CampaignComponent } from './campaign/campaign.component';
 const routes: Routes = [{
@@ -45,9 +44,6 @@ const routes: Routes = [{
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }, {
-    path: '**',
-    component: NotFoundComponent,
   }],
 }];
 

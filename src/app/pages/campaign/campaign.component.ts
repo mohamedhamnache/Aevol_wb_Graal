@@ -89,19 +89,11 @@ export class CampaignComponent implements OnInit {
        {
          if(this.TimeLetfUnix < this.bound)
          {
-
            console.log("Make a new reservation, Cause : Bound")
-           
-          }
-          else{
-            
-          }
-       }
-       else{
-          console.log("Make a new reservation, Cause : Error")
-      
-       }  
-        let reader = new FileReader();
+           const reservation ={NbNodes:1,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
+           this.simulationService.makeG5kReservation(reservation).subscribe(data => {
+
+            let reader = new FileReader();
         reader.onload = (e) =>{
            this.params = reader.result 
         };
@@ -121,15 +113,97 @@ export class CampaignComponent implements OnInit {
         this.id_deployment,
         this.nbGenerations,
         this.nbThreads)
-       console.log("####################")
-       console.log(data)
-       console.log("####################")
+       //console.log("####################")
+       //console.log(data)
+       //console.log("####################")
         this.simulationService.runWFSim(data).subscribe(res =>{
-          console.log(res)
+          //console.log(res)
         })
-         console.log(data)
+         //console.log(data)
          
        }, 25);
+
+
+
+           })
+           
+          }
+          else{let reader = new FileReader();
+            reader.onload = (e) =>{
+              this.params = reader.result 
+            };
+          reader.readAsText(this.file);
+          setTimeout(() => {
+            //const data = { params:this.params.replace(/[\r\n]\s*/g, ''),
+            //ID_USER : this.Id_user,
+            //Nom_simu:this.arr['simName'],
+            //id_deployment :this.id_deployment,
+            
+          // }
+          var data = new FormData();
+          data = this.DataBodyGen(this.paramFile,
+            this.params.replace(/[\r\n]\s*/g, ''),
+            this.Id_user,
+            this.simName,
+            this.id_deployment,
+            this.nbGenerations,
+            this.nbThreads)
+          //console.log("####################")
+          //console.log(data)
+          //console.log("####################")
+            this.simulationService.runWFSim(data).subscribe(res =>{
+              //console.log(res)
+            })
+            //console.log(data)
+            
+          }, 25);
+
+
+
+            
+          }
+       }
+       else{
+          console.log("Make a new reservation, Cause : Error")
+          const reservation ={NbNodes:1,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
+          this.simulationService.makeG5kReservation(reservation).subscribe(data => {
+
+            let reader = new FileReader();
+            reader.onload = (e) =>{
+              this.params = reader.result 
+            };
+          reader.readAsText(this.file);
+          setTimeout(() => {
+            //const data = { params:this.params.replace(/[\r\n]\s*/g, ''),
+            //ID_USER : this.Id_user,
+            //Nom_simu:this.arr['simName'],
+            //id_deployment :this.id_deployment,
+            
+          // }
+          var data = new FormData();
+          data = this.DataBodyGen(this.paramFile,
+            this.params.replace(/[\r\n]\s*/g, ''),
+            this.Id_user,
+            this.simName,
+            this.id_deployment,
+            this.nbGenerations,
+            this.nbThreads)
+          //console.log("####################")
+          //console.log(data)
+          //console.log("####################")
+            this.simulationService.runWFSim(data).subscribe(res =>{
+              //console.log(res)
+            })
+            //console.log(data)
+            
+          }, 25);
+
+
+
+           })
+      
+       }  
+        
           
           
 

@@ -5,7 +5,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
-import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import { StatisticsModule } from './statistics/statistics.module';
 import { CampaignComponent } from './campaign/campaign.component';
 
@@ -20,7 +19,7 @@ const PAGES_COMPONENTS = [
     ThemeModule,
     DashboardModule, 
     ECommerceModule,
-    MiscellaneousModule,
+    
     StatisticsModule
     
   ],

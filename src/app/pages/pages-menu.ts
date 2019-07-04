@@ -13,11 +13,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-lightbulb',
     children: [
       {
-        title: 'Singal Run',
+        title: 'Single Run',
         link: '/pages/simulations',
       },
       {
-        title: 'simulation Campaign',
+        title: 'Simulation Campaign',
         link: '/pages/campaignSim',
       },
     ],

@@ -70,7 +70,7 @@ export class NewSimFormComponent implements OnInit {
          {
 
            console.log("Make a new reservation, Cause : Bound")
-           const reservation ={NbNodes:4,walltime:"5:00:00",jobName:"Aevol-Sim-MH"}
+           const reservation ={NbNodes:1,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
            this.simulationService.makeG5kReservation(reservation).subscribe(data => {
  
               const body ={ID_USER : this.Id_user,Nom_simu:this.arr['simName'],id_deployment:this.id_deployment}
@@ -108,7 +108,7 @@ export class NewSimFormComponent implements OnInit {
        }
        else{
           console.log("Make a new reservation, Cause : Error")
-          const reservation ={NbNodes:4,walltime:"5:00:00",jobName:"Aevol-Sim-MH"}
+          const reservation ={NbNodes:1,walltime:"7:00:00",jobName:"Aevol-Sim-MH"}
           this.simulationService.makeG5kReservation(reservation).subscribe(data => {
             const body ={ID_USER : this.Id_user,Nom_simu:this.arr['simName'],id_deployment:this.id_deployment}
             this.simulationService.creatNewJob(body).subscribe(data => {
